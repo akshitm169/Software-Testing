@@ -9,6 +9,6 @@ Create Use-case and Sequence diagram using PLantUML tool.
 
 ## 2. UseCase Diagram
 ### Diagram
-![Sequence Diagram](https://github.com/akshitm169/Software-Testing/blob/main/Assignment%201/Sequence.png?raw=true)
+![UseCase Diagram](https://raw.githubusercontent.com/akshitm169/Software-Testing/main/Assignment%201/UseCase.png)
 
 ### Code
