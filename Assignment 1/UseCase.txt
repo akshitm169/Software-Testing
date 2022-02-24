@@ -1,0 +1,48 @@
+@startuml
+left to right direction
+
+actor User
+actor "Normal User" as NU
+actor Admin
+Actor Db
+
+User <|-- NU
+User <|-- Admin
+
+rectangle Bookgenics {
+    User --down-> (Login)
+    (Login) <. (Verify Password): includes
+    (Login) .down. (Display Error): extends
+
+    User --right-> (Register)
+    (Register) <. (Display Error): extends
+    
+    User --right-> (Change User Data)
+    
+    
+
+    Db --left-> (Add Books)
+    Db --left-> (Register)
+    Db --left-> (Change User Data)
+    Db --left-> (Display Books)
+
+    (Display Books) <|-- (Show All Books)
+    (Display Books) <|-- (Show Favorites)
+    (Display Books) <|-- (Show Added Books)
+    
+    User --down-> (Predict Genre)
+    (Predict Genre) <. (Add Books): extends
+
+    (Display Books) .down. (Filter/Sort Book): extends
+    (Display Books) .down. (Read Content): extends
+    (Display Books) .down. (Edit Book): extends
+    (Display Books) .down. (Favorite/Unfavorite Book): extends
+    
+    (Edit Book) .down. (Delete Book): extends
+    (Edit Book) .down. (Update Book): extends
+
+    (Update Book) <|-- (Change Author)
+    (Update Book) <|-- (Change Title)
+}
+
+@enduml
