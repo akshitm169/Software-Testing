@@ -22,4 +22,4 @@ time.sleep(3)
 sel.select_by_index(0)
 time.sleep(3)
 
-driver.close()
+driver.quit()
